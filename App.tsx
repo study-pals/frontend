@@ -5,7 +5,7 @@
  * @format
  */
 
-import type { PropsWithChildren } from 'react';
+import type { JSX, PropsWithChildren } from 'react';
 import React from 'react';
 import {
   ScrollView,
@@ -27,7 +27,7 @@ type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section ({ children, title }: SectionProps): React.JSX.Element {
+const Section = ({ children, title }: SectionProps): JSX.Element=> {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -53,9 +53,9 @@ function Section ({ children, title }: SectionProps): React.JSX.Element {
       </Text>
     </View>
   );
-}
+};
 
-function App (): React.JSX.Element {
+const App = (): JSX.Element => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -114,7 +114,7 @@ function App (): React.JSX.Element {
       </ScrollView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   sectionContainer: {
