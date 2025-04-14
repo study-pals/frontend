@@ -1,0 +1,22 @@
+title: "[Idea]  "
+body:
+- type: input
+  attributes:
+    label: 안건
+    placeholder: 안건을 입력하세요
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: 세부 내용
+    value: |
+      * 자세한 내용을 여기에 작성하세요.
+      * 필요한 모든 정보를 포함해주세요.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: 관련 링크
+    value: |
+      * [링크 설명](https://example.com)
+      * [링크 설명](https://example.com)
