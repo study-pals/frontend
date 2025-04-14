@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -e
+
+# 푸시를 실행한 원격 이름과 URL
+remote_name=$1
+remote_url=$2
+
+# 현재 브랜치
+current_branch=$(git rev-parse --abbrev-ref HEAD)
+
+echo "[pre-push] ⏳ Validating push to '$remote_name' ($remote_url)..."
+
+# 1) 브랜치 네이밍 검사
+branch_name_regex='^(feature|refactor|bugfix|chore|release|hotfix)/[a-z0-9-]+$'
+if ! echo "$current_branch" | grep -Eq "$branch_name_regex"; then
+  echo "[pre-push] ❌ Invalid branch name: '$current_branch'"
+  echo "[pre-push] Branch name must follow one of:"
+  echo "[pre-push]   • feature/xxx"
+  echo "[pre-push]   • refactor/xxx"
+  echo "[pre-push]   • bugfix/xxx"
+  echo "[pre-push]   • chore/xxx"
+  echo "[pre-push]   • release/xxx"
+  echo "[pre-push]   • hotfix/xxx"
+  echo "[pre-push] (lowercase letters, numbers and hyphens only)"
+  exit 1
+fi
+
+# 2) 빌드 성공 여부 검사
+echo "[pre-push] Running build..."
+pnpm run build
+
+echo "[pre-push] ✅ Validation successful. Proceeding with push."
+echo
+
+exit 0
