@@ -1,16 +1,16 @@
-#!/usr/bin pwsh
+#!/usr/bin sh
 
 ## OS 확인
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo "Detected macOS"
-  npx react-native run-ios &
-  npx react-native run-macos &
+  npm run macos:build &
+  npm run ios:build &
   wait
 
 elif [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
   echo "Detected Windows"
-  npx react-native run-windows &
-  npx react-native run-android &
+  npm run windows:build &
+  npm run android:build &
   wait
 
 else

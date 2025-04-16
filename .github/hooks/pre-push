@@ -27,7 +27,7 @@ fi
 
 # 2) 빌드 성공 여부 검사
 echo "[pre-push] Running build..."
-pnpm run build
+npm run build
 
 echo "[pre-push] ✅ Validation successful. Proceeding with push."
 echo
