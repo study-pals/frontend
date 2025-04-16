@@ -2,15 +2,15 @@
 
 ## OS 확인
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Detected macOS"
-  npx react-native run-ios &
-  npx react-native run-macos &
+  echo "Detected OS: macOS"
+  npm run ios &
+  npm run macos &
   wait
 
 elif [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
-  echo "Detected Windows"
-  npx react-native run-windows &
-  npx react-native run-android &
+  echo "Detected OS: Windows"
+  npm run windows &
+  npm run android &
   wait
 
 else

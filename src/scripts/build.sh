@@ -2,13 +2,13 @@
 
 ## OS 확인
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "Detected macOS"
+  echo "Detected OS: macOS"
   npm run macos:build &
   npm run ios:build &
   wait
 
 elif [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
-  echo "Detected Windows"
+  echo "Detected OS: Windows"
   npm run windows:build &
   npm run android:build &
   wait
