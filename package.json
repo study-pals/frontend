@@ -1,10 +1,13 @@
 {
-  "name": "study-pals",
+  "name": "studyPals",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "windows": "npx react-native run-windows",
+    "windows:init": "npx react-native init-windows && npx react-native run-windows --msbuildprops \"RestoreLockedMode=false\"",
+    "windows:env-setup": "./src/scripts/windows-env-setup.sh",
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
@@ -15,9 +18,10 @@
   },
   "dependencies": {
     "jotai": "^2.12.1",
-    "react": "^19.1.0",
-    "react-native": "0.79.0",
-    "react-native-web": "^0.20.0"
+    "react": "^19",
+    "react-native": "^0.78.0",
+    "react-native-macos": "^0.78.0",
+    "react-native-windows": "^0.78.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -37,6 +41,8 @@
     "@types/jest": "^29.5.13",
     "@types/react": "^19.0.0",
     "@types/react-test-renderer": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "@typescript-eslint/parser": "^8.29.1",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react": "^7.37.4",
@@ -45,20 +51,19 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^15.14.0",
     "jest": "^29.6.3",
+    "metro-config": "^0.82.1",
     "react-test-renderer": "19.0.0",
     "typescript": "5.0.4",
-    "@typescript-eslint/eslint-plugin": "^8.29.1",
-    "@typescript-eslint/parser": "^8.29.1"
+    "typescript-eslint": "^8.30.1"
   },
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=9.0.0"
+    "node": ">=18"
   },
-  "pnpm": {
-    "overrides": {
-      "eslint": "^8.56.0",
-      "@typescript-eslint/eslint-plugin": "^8.29.1",
-      "@typescript-eslint/parser": "^8.29.1"
+  "react-native-windows": {
+    "init-windows": {
+      "name": "studyPals",
+      "namespace": "studyPals",
+      "template": "old/uwp-cpp-app"
     }
   }
 }
