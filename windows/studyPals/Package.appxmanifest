@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="9529f3ea-1f65-4af3-a8ea-85eec914c134"
+    Name="378c7f18-607d-49b6-be36-b7699c1783bf"
     Publisher="CN=dioo1"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="9529f3ea-1f65-4af3-a8ea-85eec914c134" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="378c7f18-607d-49b6-be36-b7699c1783bf" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>studyPals</DisplayName>
