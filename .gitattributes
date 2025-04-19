@@ -1,4 +1,8 @@
-*.sh text eol=lf
+* text eol=lf
+
+windows/** text eol=crlf
 *.bat text eol=crlf
+
+*.sh   text eol=lf
 *.json text eol=lf
 *.jar binary
